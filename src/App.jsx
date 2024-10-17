@@ -1,7 +1,6 @@
 import React from "react";
 import "./assets/styles/app.scss";
 import Comp from "./assets/components/Comp";
-import Post from "./assets/components/miscellaneous/Post";
 
 const App = () => {
   const title = "Desserts";
@@ -9,7 +8,6 @@ const App = () => {
   return (
     <div>
       <Comp />
-      <Post />
     </div>
   );
 };
