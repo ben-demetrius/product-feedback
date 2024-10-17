@@ -1,0 +1,15 @@
+@import "./theme";
+
+.cart-main--items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: $space-300;
+
+  @media (max-width: $sm) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (max-width: $xs) {
+    grid-template-columns: auto;
+  }
+}

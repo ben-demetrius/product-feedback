@@ -1,0 +1,23 @@
+@import "./theme";
+
+.cart {
+  @include flex($gap: $space-400);
+  justify-content: center;
+
+  @media (max-width: $md) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $xs) {
+    flex-wrap: wrap;
+  }
+
+  .cart-main {
+    @include flex($direction: column, $gap: $space-400);
+
+    .cart-main--h1 {
+      @extend .text-preset-1;
+      color: $rose-900;
+    }
+  }
+}
