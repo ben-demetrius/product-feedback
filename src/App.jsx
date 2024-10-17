@@ -1,13 +1,13 @@
 import React from "react";
 import "./assets/styles/app.scss";
 import Comp from "./assets/components/Comp";
+import Board from "./assets/components/Board";
 
 const App = () => {
-  const title = "Desserts";
-
   return (
-    <div>
+    <div className="app">
       <Comp />
+      <Board />
     </div>
   );
 };

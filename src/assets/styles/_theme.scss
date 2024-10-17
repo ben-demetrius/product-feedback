@@ -58,34 +58,33 @@ $font: "Jost", serif;
 }
 
 //Responsiveness ---------------------
-// $xxl: 1536px;
-$xl: 1440px;
+$xxl: 1440px;
+$xl: 1110px;
 $lg: 1024px;
 $md: 900px;
 $sm: 740px;
 $xs: 500px;
 
 //Spacing ------------------------------
-$space-1100: 88px;
-$space-500: 40px;
-$space-400: 32px;
-$space-300: 24px;
-$space-200: 16px;
-$space-150: 12px;
-$space-100: 8px;
-$space-50: 4px;
+$space-30: 30px;
 
 //Layout
-@mixin flex($direction: row, $gap: $space-300) {
+@mixin flex($direction: row, $gap: $space-30) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: $direction;
   gap: $gap;
 }
 
-//Components --------------------------
-#root {
+.container {
+  max-width: $xl;
+  margin-left: auto;
+  margin-right: auto;
+  // padding-left: 0.5rem;
+  // padding-right: 0.5rem;
 }
+
+//Components --------------------------
 
 //Buttons -----------------------------
 //Interactive Elements -----------------------------
