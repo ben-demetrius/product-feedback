@@ -11,7 +11,7 @@
 }
 
 //Colors -------------------------
-$purple: #ad1fea;
+$violet: #ad1fea;
 $blue: #4661e6;
 $blue-1: #62bcfa;
 $navy-blue: #373f68;
@@ -21,6 +21,7 @@ $peach: #f49f85;
 $white: #ffffff;
 $white-1: #f2f4ff;
 $white-2: #f7f8fd;
+$periwinkle: #cfd7ff;
 
 //Fonts -------------------------
 $font: "Jost", serif;
@@ -38,7 +39,8 @@ $font: "Jost", serif;
 .h1 {
   @include text-preset(700, 24px, 35px, -0.33px);
 }
-.h2 {
+.h2,
+h2 {
   @include text-preset(700, 20px, 29px, -0.25px);
 }
 .h3 {
@@ -66,7 +68,13 @@ $sm: 740px;
 $xs: 500px;
 
 //Spacing ------------------------------
+$space-130: 129px;
+$space-90: 90px;
 $space-30: 30px;
+$space-24: 24px;
+$space-15: 15px;
+$space-10: 10px;
+$space-5: 5px;
 
 //Layout
 @mixin flex($direction: row, $gap: $space-30) {
@@ -85,9 +93,36 @@ $space-30: 30px;
 }
 
 //Components --------------------------
+#root {
+  padding-top: $space-90;
+  padding-bottom: $space-130;
+  background-color: $white-2;
+}
 
+//Cards -----------------------------
+.cards {
+  width: 255px;
+  height: 137px;
+
+  @include flex($direction: column, $gap: unset);
+}
 //Buttons -----------------------------
+
 //Interactive Elements -----------------------------
+.stickers {
+  padding: $space-5 $space-15;
+  background-color: $white-1;
+  color: $blue;
+}
+
+.stickers--hover:hover {
+  background-color: $periwinkle;
+}
+
+.stickers--active:active {
+  background-color: $blue;
+  color: $white;
+}
 //Form Elements -----------------------------
 
 //Test ---------------------------------
