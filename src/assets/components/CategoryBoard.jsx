@@ -1,7 +1,13 @@
 import React from "react";
+import "../styles/app.scss";
 
 const CategoryBoard = () => {
-  return <div className="pfa-categories">Hello from Category Board</div>;
+  const stickerText = "All";
+  return (
+    <div className="pfa-categories">
+      <button className="stickers">{stickerText}</button>
+    </div>
+  );
 };
 
 export default CategoryBoard;

@@ -31,8 +31,10 @@
       }
     }
 
-    .pfa-categories{
-      
+    .pfa-categories {
+      @extend .cards;
+      padding: 24px 46px 24px 28px;
+      background-color: $white;
     }
   }
 }

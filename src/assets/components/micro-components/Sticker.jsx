@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/index.scss";
 
 const Sticker = () => {
-  return <div className="stickers"></div>;
+  return <button className="stickers">{stickerText}</button>;
 };
 
 export default Sticker;

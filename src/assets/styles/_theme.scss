@@ -110,18 +110,26 @@ $space-5: 5px;
 
 //Interactive Elements -----------------------------
 .stickers {
+  width: fit-content;
   padding: $space-5 $space-15;
+  border: none;
+  border-radius: $space-10;
   background-color: $white-1;
   color: $blue;
+  @extend .body-3;
 }
 
-.stickers--hover:hover {
-  background-color: $periwinkle;
+.stickers--hover {
+  a:hover {
+    background-color: $periwinkle;
+  }
 }
 
-.stickers--active:active {
-  background-color: $blue;
-  color: $white;
+.stickers--active {
+  a:active {
+    background-color: $blue;
+    color: $white;
+  }
 }
 //Form Elements -----------------------------
 
