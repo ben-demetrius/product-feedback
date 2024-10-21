@@ -27,14 +27,6 @@
   //Fonts -------------------------
   --font: "Jost", serif;
 
-  //Responsiveness ---------------------
-  --xxl: 1440px;
-  --xl: 1110px;
-  --lg: 1024px;
-  --md: 900px;
-  --sm: 740px;
-  --xs: 500px;
-
   //Spacing ------------------------------
   --space-4: 4px;
   --space-5: 5px;
@@ -58,6 +50,14 @@
   --space-90: 90px;
   --space-130: 129px;
 }
+
+//Responsiveness ---------------------
+$xxl: 1440px;
+$xl: 1120px;
+$lg: 1024px;
+$md: 900px;
+$sm: 740px;
+$xs: 500px;
 
 @mixin text-preset(
   $weight,
@@ -107,11 +107,16 @@ h3 {
 }
 
 .container {
-  max-width: var(--xl);
+  max-width: $xl;
   margin-left: auto;
   margin-right: auto;
-  // padding-left: 0.5rem;
-  // padding-right: 0.5rem;
+  padding-left: var(--space-10);
+  padding-right: var(--space-10);
+
+  @media (max-width: $xl) {
+    // max-width: calc($xl - 10px);
+    flex-direction: column;
+  }
 }
 
 //Components --------------------------

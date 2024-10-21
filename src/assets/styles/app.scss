@@ -8,8 +8,13 @@
     @include flex($direction: column, $gap: var(--space-24));
     width: 255px;
 
+    @media (max-width: $xl) {
+      flex-direction: row;
+    }
+
     .pfa-board {
       height: 113px;
+      // width: 100%;
       @include flex($direction: column, $gap: unset);
       padding: 0 0 var(--space-24) var(--space-24);
 
@@ -42,6 +47,7 @@
     }
 
     .pfa-roadmap {
+      // max-width: 100%;
       padding: var(--space-19) var(--space-24) var(--space-24) var(--space-24);
       @include flex($direction: column, $gap: var(--space-24));
 
