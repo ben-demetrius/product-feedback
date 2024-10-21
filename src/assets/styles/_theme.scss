@@ -36,13 +36,15 @@
   --xs: 500px;
 
   //Spacing ------------------------------
-  --space-130: 129px;
-  --space-90: 90px;
-  --space-30: 30px;
-  --space-24: 24px;
-  --space-15: 15px;
-  --space-10: 10px;
   --space-5: 5px;
+  --space-10: 10px;
+  --space-15: 15px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-30: 30px;
+  --space-46: 46px;
+  --space-90: 90px;
+  --space-130: 129px;
 }
 
 @mixin text-preset($weight, $size, $line-height, $letter-spacing: unset) {
@@ -101,13 +103,6 @@ h2 {
   background-color: var(--white-2);
 }
 
-//Cards -----------------------------
-.cards {
-  width: 255px;
-  height: 137px;
-
-  @include flex($direction: column, $gap: unset);
-}
 //Buttons -----------------------------
 
 //Interactive Elements -----------------------------
