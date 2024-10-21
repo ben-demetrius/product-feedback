@@ -170,7 +170,7 @@
         .pfa-main--texts {
           @include flex($direction: column, $gap: var(--space-12));
           .pfa-main--titles {
-            @include flex($direction: column, $gap: var(--space-6));
+            @include flex($direction: column, $gap: var(--space-4));
             h3 {
               color: var(--navy-blue-1);
             }
