@@ -39,6 +39,7 @@
   --space-5: 5px;
   --space-10: 10px;
   --space-15: 15px;
+  --space-19: 19px;
   --space-24: 24px;
   --space-28: 28px;
   --space-30: 30px;
@@ -64,7 +65,8 @@
 h2 {
   @include text-preset(700, 20px, 29px, -0.25px);
 }
-.h3 {
+.h3,
+h3 {
   @include text-preset(700, 18px, 26px, -0.25px);
 }
 .h4 {
@@ -103,6 +105,13 @@ h2 {
   background-color: var(--white-2);
 }
 
+//Colored Dot --------------------------
+.colored-dot {
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
 //Buttons -----------------------------
 
 //Interactive Elements -----------------------------
@@ -116,16 +125,17 @@ h2 {
   @extend .body-3;
 }
 
-.stickers--hover {
-  a:hover {
-    background-color: var(--periwinkle);
-  }
+// .stickers--hover {
+a:hover {
+  background-color: var(--blue);
+  color: var(--white) !important;
 }
+// }
 
 .stickers--active {
   a:active {
     background-color: var(--blue);
-    color: var(--white);
+    color: var(--white) !important;
   }
 }
 //Form Elements -----------------------------

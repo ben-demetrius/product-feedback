@@ -10,12 +10,12 @@ const CategoryBoard = () => {
   const stickerText6 = "Feature";
   return (
     <div className="pfa-categories">
-      <button className="stickers">{stickerText1}</button>
-      <button className="stickers">{stickerText2}</button>
-      <button className="stickers">{stickerText3}</button>
-      <button className="stickers">{stickerText4}</button>
-      <button className="stickers">{stickerText5}</button>
-      <button className="stickers">{stickerText6}</button>
+      <a className="stickers stickers--hover">{stickerText1}</a>
+      <a className="stickers">{stickerText2}</a>
+      <a className="stickers">{stickerText3}</a>
+      <a className="stickers">{stickerText4}</a>
+      <a className="stickers">{stickerText5}</a>
+      <a className="stickers">{stickerText6}</a>
     </div>
   );
 };

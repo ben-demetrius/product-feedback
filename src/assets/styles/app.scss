@@ -6,9 +6,9 @@
 
   .pfa-side-cards {
     @include flex($direction: column, $gap: var(--space-24));
+    width: 255px;
 
     .pfa-board {
-      width: 248px;
       height: 113px;
       @include flex($direction: column, $gap: unset);
       padding: 0 0 var(--space-24) var(--space-24);
@@ -34,16 +34,33 @@
     }
 
     .pfa-categories {
-      width: 199px;
-      height: 137px;
       padding: var(--space-24) 46px var(--space-24) var(--space-28);
-
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-10);
+      @include flex($direction: row, $gap: var(--space-10));
 
       background-color: var(--white);
       border-radius: var(--space-10);
+    }
+
+    .pfa-roadmap {
+      padding: var(--space-19) var(--space-24) var(--space-24) var(--space-24);
+      @include flex($direction: column, $gap: var(--space-24));
+
+      background-color: var(--white);
+      border-radius: var(--space-10);
+
+      .pfa-roadmap-header {
+        @include flex($direction: row, $gap: unset);
+        align-items: center;
+        .pfa-roadmap-header__h3 {
+          color: var(--navy-blue-1);
+        }
+
+        .pfa-roadmap-header__a {
+          margin-left: auto;
+          @extend .body-3;
+          color: var(--blue);
+        }
+      }
     }
   }
 }
