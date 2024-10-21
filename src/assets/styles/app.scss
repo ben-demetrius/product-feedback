@@ -61,6 +61,26 @@
           color: var(--blue);
         }
       }
+
+      .pfa-roadmap-rows {
+        @include flex($direction: column, $gap: var(--space-8));
+
+        .pfa-roadmap-row {
+          @include flex($direction: row, $gap: var(--space-8));
+          align-items: center;
+
+          .pfa-roadmap-row__p-text {
+            @extend .body-1;
+            color: var(--navy-blue-2);
+          }
+
+          .pfa-roadmap-row__p-number {
+            @extend .pfa-roadmap-row__p-text;
+            font-weight: bold;
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
 }

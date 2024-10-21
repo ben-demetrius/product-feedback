@@ -36,8 +36,8 @@ const Roadmap = () => {
             className="colored-dot"
             style={{ backgroundColor: `${iconColor1}` }}
           ></div>
-          <p>{rowText1}</p>
-          <p>{rowNumber1}</p>
+          <p className="pfa-roadmap-row__p-text">{rowText1}</p>
+          <p className="pfa-roadmap-row__p-number">{rowNumber1}</p>
         </div>
 
         <div className="pfa-roadmap-row">
@@ -45,8 +45,8 @@ const Roadmap = () => {
             className="colored-dot"
             style={{ backgroundColor: `${iconColor2}` }}
           ></div>
-          <p>{rowText2}</p>
-          <p>{rowNumber2}</p>
+          <p className="pfa-roadmap-row__p-text">{rowText2}</p>
+          <p className="pfa-roadmap-row__p-number">{rowNumber2}</p>
         </div>
 
         <div className="pfa-roadmap-row">
@@ -54,8 +54,8 @@ const Roadmap = () => {
             className="colored-dot"
             style={{ backgroundColor: `${iconColor3}` }}
           ></div>
-          <p>{rowText3}</p>
-          <p>{rowNumber3}</p>
+          <p className="pfa-roadmap-row__p-text">{rowText3}</p>
+          <p className="pfa-roadmap-row__p-number">{rowNumber3}</p>
         </div>
       </div>
     </div>
