@@ -5,11 +5,11 @@
   @include flex();
 
   .pfa-side-cards {
-    @include flex($direction: column, $gap: $space-24);
+    @include flex($direction: column, $gap: var(--space-24));
 
     .pfa-board {
       @extend .cards;
-      padding: 0 0 $space-24 $space-24;
+      padding: 0 0 var(--space-24) var(--space-24);
 
       justify-content: end;
 
@@ -20,21 +20,21 @@
         rgba(163, 55, 246, 1) 53%,
         rgba(40, 167, 237, 1) 100%
       );
-      border-radius: $space-10;
+      border-radius: var(--space-10);
 
       h2 {
-        color: $white;
+        color: var(--white);
       }
       p {
         @extend .body-2;
-        color: $white;
+        color: var(--white);
       }
     }
 
     .pfa-categories {
       @extend .cards;
       padding: 24px 46px 24px 28px;
-      background-color: $white;
+      background-color: var(--white);
     }
   }
 }

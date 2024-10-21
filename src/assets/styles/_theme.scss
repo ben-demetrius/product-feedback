@@ -10,25 +10,44 @@
   }
 }
 
-//Colors -------------------------
-$violet: #ad1fea;
-$blue: #4661e6;
-$blue-1: #62bcfa;
-$navy-blue: #373f68;
-$navy-blue-1: #3a4374;
-$navy-blue-2: #647196;
-$peach: #f49f85;
-$white: #ffffff;
-$white-1: #f2f4ff;
-$white-2: #f7f8fd;
-$periwinkle: #cfd7ff;
+:root {
+  //Colors -------------------------
+  --violet: #ad1fea;
+  --blue: #4661e6;
+  --blue-1: #62bcfa;
+  --navy-blue: #373f68;
+  --navy-blue-1: #3a4374;
+  --navy-blue-2: #647196;
+  --peach: #f49f85;
+  --white: #ffffff;
+  --white-1: #f2f4ff;
+  --white-2: #f7f8fd;
+  --periwinkle: #cfd7ff;
 
-//Fonts -------------------------
-$font: "Jost", serif;
+  //Fonts -------------------------
+  --font: "Jost", serif;
+
+  //Responsiveness ---------------------
+  --xxl: 1440px;
+  --xl: 1110px;
+  --lg: 1024px;
+  --md: 900px;
+  --sm: 740px;
+  --xs: 500px;
+
+  //Spacing ------------------------------
+  --space-130: 129px;
+  --space-90: 90px;
+  --space-30: 30px;
+  --space-24: 24px;
+  --space-15: 15px;
+  --space-10: 10px;
+  --space-5: 5px;
+}
 
 @mixin text-preset($weight, $size, $line-height, $letter-spacing: unset) {
   font: {
-    family: $font;
+    family: var(--font);
     weight: $weight;
     size: $size;
   }
@@ -59,25 +78,8 @@ h2 {
   @include text-preset(600, 13px, 19px);
 }
 
-//Responsiveness ---------------------
-$xxl: 1440px;
-$xl: 1110px;
-$lg: 1024px;
-$md: 900px;
-$sm: 740px;
-$xs: 500px;
-
-//Spacing ------------------------------
-$space-130: 129px;
-$space-90: 90px;
-$space-30: 30px;
-$space-24: 24px;
-$space-15: 15px;
-$space-10: 10px;
-$space-5: 5px;
-
 //Layout
-@mixin flex($direction: row, $gap: $space-30) {
+@mixin flex($direction: row, $gap: var(--space-30)) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: $direction;
@@ -85,7 +87,7 @@ $space-5: 5px;
 }
 
 .container {
-  max-width: $xl;
+  max-width: var(--xl);
   margin-left: auto;
   margin-right: auto;
   // padding-left: 0.5rem;
@@ -94,9 +96,9 @@ $space-5: 5px;
 
 //Components --------------------------
 #root {
-  padding-top: $space-90;
-  padding-bottom: $space-130;
-  background-color: $white-2;
+  padding-top: var(--space-90);
+  padding-bottom: var(--space-130);
+  background-color: var(--white-2);
 }
 
 //Cards -----------------------------
@@ -111,24 +113,24 @@ $space-5: 5px;
 //Interactive Elements -----------------------------
 .stickers {
   width: fit-content;
-  padding: $space-5 $space-15;
+  padding: var(--space-5) var(--space-15);
   border: none;
-  border-radius: $space-10;
-  background-color: $white-1;
-  color: $blue;
+  border-radius: var(--space-10);
+  background-color: var(--white-1);
+  color: var(--blue);
   @extend .body-3;
 }
 
 .stickers--hover {
   a:hover {
-    background-color: $periwinkle;
+    background-color: var(--periwinkle);
   }
 }
 
 .stickers--active {
   a:active {
-    background-color: $blue;
-    color: $white;
+    background-color: var(--blue);
+    color: var(--white);
   }
 }
 //Form Elements -----------------------------
