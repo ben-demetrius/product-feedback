@@ -1,0 +1,15 @@
+assemble:
+    - from: vite-build
+      into: static
+react-workspace:
+    cssURLs:
+        - style.css
+    friendlyURLMapping: react-workspace
+    htmlElementName: react-workspace
+    instanceable: true
+    name: Product Feedback App
+    portletCategoryName: category.client-extensions
+    type: customElement
+    urls:
+        - assets/*.js
+    useESM: true
