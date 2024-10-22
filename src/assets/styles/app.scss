@@ -193,6 +193,7 @@
 
             .pfa-category__p {
               @extend .pfa-stickers;
+              text-transform: capitalize;
             }
           }
 

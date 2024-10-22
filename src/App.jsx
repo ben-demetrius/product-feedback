@@ -6,6 +6,7 @@ import Roadmap from "./assets/components/Roadmap";
 import Header from "./assets/components/Header";
 import Card from "./assets/components/Card";
 import CreateFeedback from "./assets/components/CreateFeedback";
+import Cards from "./assets/components/Cards";
 
 const App = () => {
   return (
@@ -18,14 +19,7 @@ const App = () => {
         </div>
         <div className="pfa-main">
           <Header />
-          <div className="pfa-cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Cards />
         </div>
       </div>
       <CreateFeedback />
