@@ -128,16 +128,18 @@ h3 {
 }
 
 //Colored Dot --------------------------
-.colored-dot {
+.pfa-colored-dot {
   border-radius: 50%;
   height: var(--space-8);
   width: var(--space-8);
 }
 
 //Buttons -----------------------------
+.pfa__back-btn {
+}
 
 //Interactive Elements -----------------------------
-.stickers {
+.pfa-stickers {
   width: fit-content;
   padding: var(--space-5) var(--space-15);
   border: none;
@@ -147,13 +149,13 @@ h3 {
   @extend .body-3;
 }
 
-// .stickers--hover {
+// .pfa-stickers--hover {
 a:hover {
   background-color: var(--periwinkle);
 }
 // }
 
-// .stickers--active {
+// .pfa-stickers--active {
 a:active {
   background-color: var(--blue);
   color: var(--white) !important;

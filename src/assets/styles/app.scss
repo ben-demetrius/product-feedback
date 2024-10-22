@@ -1,6 +1,6 @@
 @import "./theme";
 
-.pfa-app {
+.pfa-dash {
   @extend .container;
   @include flex();
   flex-wrap: nowrap;
@@ -201,7 +201,7 @@
           }
 
           .pfa-category__p {
-            @extend .stickers;
+            @extend .pfa-stickers;
           }
         }
 

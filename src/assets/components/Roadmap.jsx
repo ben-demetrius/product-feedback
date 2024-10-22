@@ -29,7 +29,7 @@ const Roadmap = () => {
       <div className="pfa-rows">
         <div className="pfa-row">
           <div
-            className="colored-dot"
+            className="pfa-colored-dot"
             style={{ backgroundColor: `${iconColor1}` }}
           ></div>
           <p className="pfa-row__p-text">{rowText1}</p>
@@ -38,7 +38,7 @@ const Roadmap = () => {
 
         <div className="pfa-row">
           <div
-            className="colored-dot"
+            className="pfa-colored-dot"
             style={{ backgroundColor: `${iconColor2}` }}
           ></div>
           <p className="pfa-row__p-text">{rowText2}</p>
@@ -47,7 +47,7 @@ const Roadmap = () => {
 
         <div className="pfa-row">
           <div
-            className="colored-dot"
+            className="pfa-colored-dot"
             style={{ backgroundColor: `${iconColor3}` }}
           ></div>
           <p className="pfa-row__p-text">{rowText3}</p>
