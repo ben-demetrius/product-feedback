@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 @media print {
@@ -45,8 +46,11 @@
   --space-32: 32px;
   --space-38: 38px;
   --space-40: 40px;
+  --space-42: 42px;
   --space-44: 44px;
   --space-46: 46px;
+  --space-48: 48px;
+  --space-52: 52px;
   --space-90: 90px;
   --space-130: 129px;
 }
@@ -74,7 +78,8 @@ $xs: 500px;
   letter-spacing: $letter-spacing;
 }
 
-.h1 {
+.h1,
+h1 {
   @include text-preset(700, 24px, 35px, -0.33px);
 }
 .h2,
@@ -85,7 +90,8 @@ h2 {
 h3 {
   @include text-preset(700, 18px, 26px, -0.25px);
 }
-.h4 {
+.h4,
+h4 {
   @include text-preset(700, 14px, 20px, -0.2px);
 }
 .body-1 {
@@ -127,6 +133,14 @@ h3 {
   background-color: var(--white-2);
 }
 
+.pfa-arrow-down {
+  svg {
+    path {
+      stroke: var(--white);
+    }
+  }
+}
+
 //Colored Dot --------------------------
 .pfa-colored-dot {
   border-radius: 50%;
@@ -136,6 +150,39 @@ h3 {
 
 //Buttons -----------------------------
 .pfa__back-btn {
+  @include flex($direction: row, $gap: var(--space-10));
+  align-items: center;
+  border: none;
+  background-color: inherit;
+
+  h4 {
+    color: var(--navy-blue-2);
+  }
+}
+
+.pfa__back-btn:hover {
+  text-decoration: underline;
+  color: var(--navy-blue-2);
+}
+
+.pfa-btn {
+  height: var(--space-44);
+  padding: var(--space-24);
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  border: none;
+  border-radius: var(--space-10);
+  @extend .h4;
+  color: var(--white);
+}
+.pfa-btn--primary {
+  background-color: var(--violet);
+}
+
+.pfa-btn--secondary {
+  background-color: var(--navy-blue-1);
 }
 
 //Interactive Elements -----------------------------
@@ -149,18 +196,15 @@ h3 {
   @extend .body-3;
 }
 
-// .pfa-stickers--hover {
-a:hover {
+.pfa-stickers--hover:hover {
   background-color: var(--periwinkle);
 }
-// }
 
-// .pfa-stickers--active {
-a:active {
+.pfa-stickers:active {
   background-color: var(--blue);
   color: var(--white) !important;
 }
-// }
+
 //Form Elements -----------------------------
 
 //Test ---------------------------------

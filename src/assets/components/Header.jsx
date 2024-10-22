@@ -1,6 +1,7 @@
 import React from "react";
 import imgSrc from "../../../public/assets/suggestions/icon-suggestions.svg";
 import down from "../../../public/assets/shared/icon-arrow-down.svg";
+import ArrowDown from "./micro-components/ArrowDown";
 
 const Header = () => {
   const suggestionsText = "6 Suggestions";
@@ -16,7 +17,8 @@ const Header = () => {
           Sort by : <b>Most Upvotes</b>
         </p>
         <button className="pfa-sort__button">
-          <img src={down} />
+          {/* <img src={down} /> */}
+          <ArrowDown />
         </button>
       </div>
       <button className="pfa-header__btn">+ {addFeedback}</button>

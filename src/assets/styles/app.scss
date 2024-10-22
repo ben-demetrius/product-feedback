@@ -1,224 +1,283 @@
 @import "./theme";
 
-.pfa-dash {
-  @extend .container;
-  @include flex();
-  flex-wrap: nowrap;
-
-  .pfa-side-cards {
-    width: 255px;
-    @include flex($direction: column, $gap: var(--space-24));
+.pfa-app {
+  .pfa-dash {
+    @extend .container;
+    @include flex();
     flex-wrap: nowrap;
 
-    @media (max-width: calc($xl + 200px)) {
-      flex-direction: row;
-      width: 100%;
-    }
-
-    .pfa-board {
-      height: 113px;
-      // width: 100%;
-      padding: 0 0 var(--space-24) var(--space-24);
-
-      @include flex($direction: column, $gap: unset);
-      justify-content: end;
-
-      background: rgb(232, 77, 112);
-      background: linear-gradient(
-        223deg,
-        rgba(232, 77, 112, 1) 0%,
-        rgba(163, 55, 246, 1) 53%,
-        rgba(40, 167, 237, 1) 100%
-      );
-      border-radius: var(--space-10);
-
-      h2 {
-        color: var(--white);
-      }
-
-      p {
-        @extend .body-2;
-        color: var(--white);
-      }
-    }
-
-    .pfa-categories {
-      padding: var(--space-24) 46px var(--space-24) var(--space-28);
-      @include flex($direction: row, $gap: var(--space-10));
-
-      background-color: var(--white);
-      border-radius: var(--space-10);
-    }
-
-    .pfa-roadmap {
-      // max-width: 100%;
-      padding: var(--space-19) var(--space-24) var(--space-24) var(--space-24);
+    .pfa-side-cards {
+      width: 255px;
       @include flex($direction: column, $gap: var(--space-24));
+      flex-wrap: nowrap;
 
-      background-color: var(--white);
-      border-radius: var(--space-10);
+      @media (max-width: calc($xl + 200px)) {
+        flex-direction: row;
+        width: 100%;
+      }
 
-      .pfa-header {
-        @include flex($direction: row, $gap: unset);
-        align-items: center;
+      .pfa-board {
+        height: 113px;
+        // width: 100%;
+        padding: 0 0 var(--space-24) var(--space-24);
 
-        .pfa-header__h3 {
-          color: var(--navy-blue-1);
+        @include flex($direction: column, $gap: unset);
+        justify-content: end;
+
+        background: rgb(232, 77, 112);
+        background: linear-gradient(
+          223deg,
+          rgba(232, 77, 112, 1) 0%,
+          rgba(163, 55, 246, 1) 53%,
+          rgba(40, 167, 237, 1) 100%
+        );
+        border-radius: var(--space-10);
+
+        h2 {
+          color: var(--white);
         }
 
-        .pfa-header__a {
-          margin-left: auto;
-          @extend .body-3;
-          color: var(--blue);
+        p {
+          @extend .body-2;
+          color: var(--white);
         }
       }
 
-      .pfa-rows {
-        @include flex($direction: column, $gap: var(--space-8));
+      .pfa-categories {
+        padding: var(--space-24) 46px var(--space-24) var(--space-28);
+        @include flex($direction: row, $gap: var(--space-10));
 
-        .pfa-row {
-          @include flex($direction: row, $gap: var(--space-8));
+        background-color: var(--white);
+        border-radius: var(--space-10);
+      }
+
+      .pfa-roadmap {
+        // max-width: 100%;
+        padding: var(--space-19) var(--space-24) var(--space-24) var(--space-24);
+        @include flex($direction: column, $gap: var(--space-24));
+
+        background-color: var(--white);
+        border-radius: var(--space-10);
+
+        .pfa-header {
+          @include flex($direction: row, $gap: unset);
           align-items: center;
 
-          .pfa-row__p-text {
-            @extend .body-1;
-            color: var(--navy-blue-2);
+          .pfa-header__h3 {
+            color: var(--navy-blue-1);
           }
 
-          .pfa-row__p-number {
+          .pfa-header__a {
             margin-left: auto;
+            @extend .body-3;
+            color: var(--blue);
+          }
+        }
 
-            @extend .pfa-row__p-text;
-            font-weight: bold;
+        .pfa-rows {
+          @include flex($direction: column, $gap: var(--space-8));
+
+          .pfa-row {
+            @include flex($direction: row, $gap: var(--space-8));
+            align-items: center;
+
+            .pfa-row__p-text {
+              @extend .body-1;
+              color: var(--navy-blue-2);
+            }
+
+            .pfa-row__p-number {
+              margin-left: auto;
+
+              @extend .pfa-row__p-text;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .pfa-main {
+      width: 825px;
+      @include flex($direction: column, $gap: var(--space-24));
+
+      .pfa-header {
+        padding: var(--space-14) var(--space-16) var(--space-14) var(--space-24);
+        @include flex($direction: row, $gap: var(--space-38));
+        align-items: center;
+
+        background-color: var(--navy-blue);
+        border-radius: var(--space-10);
+
+        .pfa-suggestions {
+          @include flex($direction: row, $gap: var(--space-16));
+
+          .pfa-suggestions__img {
+            height: var(--space-24);
+          }
+
+          .pfa-suggestions__h3 {
+            color: var(--white);
+          }
+        }
+
+        .pfa-sort {
+          @include flex($direction: row, $gap: var(--space-6));
+          align-items: center;
+
+          .pfa-sort__p {
+            @include text-preset(400, 14px);
+            color: var(--white);
+          }
+
+          .pfa-sort__button {
+            border: none;
+            background-color: inherit;
+
+            img {
+              color: var(--white);
+              font-weight: bold;
+            }
+          }
+        }
+
+        .pfa-header__btn {
+          @extend .pfa-btn, .pfa-btn--primary;
+        }
+      }
+
+      .pfa-cards {
+        @include flex($direction: column, $gap: var(--space-20));
+
+        .pfa-card {
+          padding: var(--space-28) var(--space-32);
+          @include flex($direction: row, $gap: var(--space-40));
+
+          background-color: var(--white);
+          border-radius: var(--space-10);
+
+          .pfa-vote {
+            height: 29px;
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+            align-items: center;
+
+            background-color: var(--white-1);
+            border-radius: var(--space-10);
+
+            img,
+            .pfa-vote__p {
+              @extend .body-3;
+              font-weight: bold;
+              color: var(--navy-blue-1);
+            }
+          }
+
+          .pfa-texts {
+            @include flex($direction: column, $gap: var(--space-12));
+
+            .pfa-titles {
+              @include flex($direction: column, $gap: var(--space-4));
+
+              h3 {
+                color: var(--navy-blue-1);
+              }
+
+              .pfa-titles__p {
+                @extend .body-1;
+                color: var(--navy-blue-2);
+              }
+            }
+
+            .pfa-category__p {
+              @extend .pfa-stickers;
+            }
+          }
+
+          .pfa-comments {
+            margin-left: auto;
+            @include flex($direction: row, $gap: var(--space-8));
+            align-items: center;
+
+            img {
+              width: 18px;
+              height: 16px;
+            }
+
+            .pfa-comments__p {
+              @extend .body-1;
+              font-weight: bold;
+              color: var(--navy-blue-1);
+            }
           }
         }
       }
     }
   }
 
-  .pfa-main {
-    width: 825px;
-    @include flex($direction: column, $gap: var(--space-24));
+  .pfa-create-feedback {
+    //Remove this padding when functional
+    padding-top: 250px;
 
-    .pfa-header {
-      padding: var(--space-14) var(--space-16) var(--space-14) var(--space-24);
-      @include flex($direction: row, $gap: var(--space-38));
-      align-items: center;
+    @extend .container;
+    width: 540px;
 
-      background-color: var(--navy-blue);
-      border-radius: var(--space-10);
+    @include flex($direction: column, $gap: var(--space-40));
 
-      .pfa-suggestions {
-        @include flex($direction: row, $gap: var(--space-16));
-
-        .pfa-suggestions__img {
-          height: var(--space-24);
-        }
-
-        .pfa-suggestions__h3 {
-          color: var(--white);
-        }
+    .pfa-main {
+      .pfa-main__img {
+        padding: 0 var(--space-42);
       }
 
-      .pfa-sort {
-        @include flex($direction: row, $gap: var(--space-6));
-        align-items: center;
+      .pfa-feedback-form {
+        margin-top: -35px;
+        padding: var(--space-52) var(--space-42);
 
-        .pfa-sort__p {
-          @include text-preset(400, 14px);
-          color: var(--white);
-        }
+        @include flex($direction: column, $gap: var(--space-40));
 
-        .pfa-sort__button {
-          border: none;
-          background-color: inherit;
-
-          img {
-            color: var(--white);
-            font-weight: bold;
-          }
-        }
-      }
-
-      .pfa-header__btn {
-        height: var(--space-44);
-        padding: var(--space-24);
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-
-        border: none;
-        border-radius: var(--space-10);
-        background-color: var(--violet);
-        @extend .h4;
-        color: var(--white);
-      }
-    }
-
-    .pfa-cards {
-      @include flex($direction: column, $gap: var(--space-20));
-
-      .pfa-card {
-        padding: var(--space-28) var(--space-32);
-        @include flex($direction: row, $gap: var(--space-40));
-
+        border-radius: var(--space-5);
         background-color: var(--white);
-        border-radius: var(--space-10);
 
-        .pfa-vote {
-          height: 29px;
-          padding: var(--space-8);
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-6);
-          align-items: center;
+        .pfa-feedback-form__h1 {
+          color: var(--navy-blue-1);
+        }
 
-          background-color: var(--white-1);
-          border-radius: var(--space-10);
-
-          img,
-          .pfa-vote__p {
-            @extend .body-3;
-            font-weight: bold;
+        .pfa-feedback-title,
+        .pfa-feedback-category,
+        .pfa-feedback-detail {
+          @include flex($direction: column, $gap: var(--space-5));
+          .pfa-feedback-title__h4 {
             color: var(--navy-blue-1);
+          }
+
+          .pfa-feedback-title__p {
+            font-weight: 400;
+            color: var(--navy-blue-2);
+          }
+
+          input,
+          textarea {
+            margin-top: var(--space-10);
+            height: var(--space-48);
+            border: none;
+            border-radius: var(--space-10);
+            background-color: var(--white-2);
+          }
+
+          input:focus-visible,
+          textarea:focus-visible {
+            outline: none;
           }
         }
 
-        .pfa-texts {
-          @include flex($direction: column, $gap: var(--space-12));
+        .pfa-feedback-buttons {
+          @include flex($direction: row, $gap: var(--space-16));
+          justify-content: flex-end;
 
-          .pfa-titles {
-            @include flex($direction: column, $gap: var(--space-4));
-
-            h3 {
-              color: var(--navy-blue-1);
-            }
-
-            .pfa-titles__p {
-              @extend .body-1;
-              color: var(--navy-blue-2);
-            }
-          }
-
-          .pfa-category__p {
-            @extend .pfa-stickers;
-          }
-        }
-
-        .pfa-comments {
-          margin-left: auto;
-          @include flex($direction: row, $gap: var(--space-8));
-          align-items: center;
-
-          img {
-            width: 18px;
-            height: 16px;
-          }
-
-          .pfa-comments__p {
-            @extend .body-1;
-            font-weight: bold;
-            color: var(--navy-blue-1);
+          * {
+            margin-left: 0;
           }
         }
       }

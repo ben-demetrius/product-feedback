@@ -14,9 +14,9 @@ const Post = () => {
   return (
     <form className="Post" onSubmit={handleSubmit}>
       <input
-        type="int"
-        placeholder="Age"
-        id="age"
+        type="text"
+        placeholder="Name"
+        id="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
