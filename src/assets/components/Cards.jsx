@@ -9,8 +9,6 @@ const Cards = () => {
     get().then((data) => setData(data));
   }, []);
 
-  console.log(data);
-
   const cards = data.map((item, i) => {
     return (
       <Card

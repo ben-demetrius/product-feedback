@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BackButton from "./micro-components/BackButton";
 import newFeedback from "../../../public/assets/shared/icon-new-feedback.svg";
 import Feedback from "../js/FeedBack";
+import { post } from "../js/httpRequests";
 
 const CreateFeedback = () => {
   const sectionTitle = "Create New Feedback";
@@ -17,16 +18,18 @@ const CreateFeedback = () => {
     "Include any specific comments on what should be improved, added, etc.";
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [detail, setDetail] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("enhancement");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const tempObj = new Feedback({
       title: title,
-      detail: detail,
+      description: description,
+      category: category,
     });
-    console.log(tempObj);
+
+    post(tempObj);
   };
 
   return (
@@ -66,8 +69,8 @@ const CreateFeedback = () => {
             <textarea
               type="text"
               id="name"
-              value={detail}
-              onChange={(e) => setDetail(e.target.value)}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="pfa-feedback-buttons">

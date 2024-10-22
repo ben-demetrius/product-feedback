@@ -1,10 +1,9 @@
 class Feedback {
-  constructor({ title = "Test", detail }) {
+  constructor({ title = "Test", description, category }) {
     this.title = title;
-    this.detail = detail;
+    this.description = description;
+    this.category = category;
   }
 }
-
-// const myItem = new FeedBack("Test", "This is a good feedback");
 
 export default Feedback;
