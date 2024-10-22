@@ -9,14 +9,14 @@ import Card from "./assets/components/Card";
 const App = () => {
   return (
     <div className="pfa-app">
-      <div className="pfa-side--cards">
+      <div className="pfa-side-cards">
         <Board />
         <CategoryBoard />
         <Roadmap />
       </div>
       <div className="pfa-main">
         <Header />
-        <div className="pfa-main--cards">
+        <div className="pfa-cards">
           <Card />
           <Card />
           <Card />

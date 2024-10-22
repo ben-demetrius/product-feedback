@@ -9,21 +9,21 @@ const Card = () => {
   const category = "Enhancement";
   const replies = 2;
   return (
-    <div className="pfa-main--card">
-      <div className="pfa-main--vote">
+    <div className="pfa-card">
+      <div className="pfa-vote">
         <img src={up} />
-        <p className="pfa-main--vote__p">{upvoteNumber}</p>
+        <p className="pfa-vote__p">{upvoteNumber}</p>
       </div>
-      <div className="pfa-main--texts">
-        <div className="pfa-main--titles">
+      <div className="pfa-texts">
+        <div className="pfa-titles">
           <h3>{title}</h3>
-          <p className="pfa-main--titles__p">{subTitle}</p>
+          <p className="pfa-titles__p">{subTitle}</p>
         </div>
-        <p className="pfa-main--category__p">{category}</p>
+        <p className="pfa-category__p">{category}</p>
       </div>
-      <div className="pfa-main--comments">
+      <div className="pfa-comments">
         <img src={comments} />
-        <p className="pfa-main--comments__p">{replies}</p>
+        <p className="pfa-comments__p">{replies}</p>
       </div>
     </div>
   );

@@ -6,20 +6,20 @@ const Header = () => {
   const suggestionsText = "6 Suggestions";
   const addFeedback = "Add Feedback";
   return (
-    <div className="pfa-main-header">
-      <div className="pfa-main-suggestions">
-        <img src={imgSrc} className="pfa-main-suggestions__img" />
-        <h3 className="pfa-main-suggestions__h3">{suggestionsText}</h3>
+    <div className="pfa-header">
+      <div className="pfa-suggestions">
+        <img src={imgSrc} className="pfa-suggestions__img" />
+        <h3 className="pfa-suggestions__h3">{suggestionsText}</h3>
       </div>
-      <div className="pfa-main-sort">
-        <p className="pfa-main-sort__p">
+      <div className="pfa-sort">
+        <p className="pfa-sort__p">
           Sort by : <b>Most Upvotes</b>
         </p>
-        <button className="pfa-main-sort__button">
+        <button className="pfa-sort__button">
           <img src={down} />
         </button>
       </div>
-      <button className="pfa-main__add-feedback-btn">+ {addFeedback}</button>
+      <button className="pfa-header__btn">+ {addFeedback}</button>
     </div>
   );
 };

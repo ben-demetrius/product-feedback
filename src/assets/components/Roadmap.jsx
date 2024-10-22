@@ -20,42 +20,38 @@ const Roadmap = () => {
 
   return (
     <div className="pfa-roadmap">
-      <div className="pfa-roadmap-header">
-        <h3 className="pfa-roadmap-header__h3">{cardHeader}</h3>
-        <a
-          className="pfa-roadmap-header__a"
-          href={anchorTagUrl}
-          target="_blank"
-        >
+      <div className="pfa-header">
+        <h3 className="pfa-header__h3">{cardHeader}</h3>
+        <a className="pfa-header__a" href={anchorTagUrl} target="_blank">
           {anchorTagText}
         </a>
       </div>
-      <div className="pfa-roadmap-rows">
-        <div className="pfa-roadmap-row">
+      <div className="pfa-rows">
+        <div className="pfa-row">
           <div
             className="colored-dot"
             style={{ backgroundColor: `${iconColor1}` }}
           ></div>
-          <p className="pfa-roadmap-row__p-text">{rowText1}</p>
-          <p className="pfa-roadmap-row__p-number">{rowNumber1}</p>
+          <p className="pfa-row__p-text">{rowText1}</p>
+          <p className="pfa-row__p-number">{rowNumber1}</p>
         </div>
 
-        <div className="pfa-roadmap-row">
+        <div className="pfa-row">
           <div
             className="colored-dot"
             style={{ backgroundColor: `${iconColor2}` }}
           ></div>
-          <p className="pfa-roadmap-row__p-text">{rowText2}</p>
-          <p className="pfa-roadmap-row__p-number">{rowNumber2}</p>
+          <p className="pfa-row__p-text">{rowText2}</p>
+          <p className="pfa-row__p-number">{rowNumber2}</p>
         </div>
 
-        <div className="pfa-roadmap-row">
+        <div className="pfa-row">
           <div
             className="colored-dot"
             style={{ backgroundColor: `${iconColor3}` }}
           ></div>
-          <p className="pfa-roadmap-row__p-text">{rowText3}</p>
-          <p className="pfa-roadmap-row__p-number">{rowNumber3}</p>
+          <p className="pfa-row__p-text">{rowText3}</p>
+          <p className="pfa-row__p-number">{rowNumber3}</p>
         </div>
       </div>
     </div>
