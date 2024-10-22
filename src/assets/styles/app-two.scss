@@ -1,0 +1,101 @@
+@import "./theme";
+
+.pfa-app {
+  .pfa-side--cards {
+    .pfa-board {
+      h2 {
+      }
+
+      p {
+      }
+    }
+
+    .pfa-categories {
+      .stickers {
+      }
+    }
+
+    .pfa-roadmap {
+      .pfa-roadmap-header {
+        .pfa-roadmap-header__h3 {
+        }
+
+        .pfa-roadmap-header__a {
+        }
+      }
+
+      .pfa-roadmap-rows {
+        .pfa-roadmap-row {
+          .colored-dot {
+          }
+
+          .pfa-roadmap-row__p-text {
+          }
+
+          .pfa-roadmap-row__p-number {
+          }
+        }
+      }
+    }
+  }
+
+  .pfa-main {
+    .pfa-main-header {
+      .pfa-main-suggestions {
+        .pfa-main-suggestions__img {
+        }
+
+        .pfa-main-suggestions__h3 {
+        }
+      }
+
+      .pfa-main-sort {
+        .pfa-main-sort__p {
+          b {
+          }
+        }
+
+        .pfa-main-sort__button {
+          img {
+          }
+        }
+      }
+
+      .pfa-main__add-feedback-btn {
+      }
+    }
+
+    .pfa-main--cards {
+      .pfa-main--card {
+        .pfa-main--vote {
+          img {
+          }
+
+          .pfa-main--vote__p {
+          }
+        }
+
+        .pfa-main--texts {
+          .pfa-main--titles {
+            h3 {
+            }
+
+            .pfa-main--titles__p {
+            }
+          }
+
+          .pfa-main--category__p {
+          }
+        }
+
+        .pfa-main--comments {
+          img {
+          }
+
+          .pfa-main--comments__p {
+          }
+        }
+      }
+    }
+  }
+}

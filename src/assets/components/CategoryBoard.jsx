@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/app.scss";
+import "../styles/app-two.scss";
 
 const CategoryBoard = () => {
   const stickerText1 = "All";

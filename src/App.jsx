@@ -1,5 +1,5 @@
 import React from "react";
-import "./assets/styles/app.scss";
+import "./assets/styles/app-two.scss";
 import Board from "./assets/components/Board";
 import CategoryBoard from "./assets/components/CategoryBoard";
 import Roadmap from "./assets/components/Roadmap";
