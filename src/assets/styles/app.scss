@@ -1,14 +1,14 @@
 @import "./theme";
 
 .pfa-app {
-  @include flex();
   @extend .container;
+  @include flex();
   flex-wrap: nowrap;
 
-  .pfa-side--cards {
+  .pfa-side-cards {
+    width: 255px;
     @include flex($direction: column, $gap: var(--space-24));
     flex-wrap: nowrap;
-    width: 255px;
 
     @media (max-width: calc($xl + 200px)) {
       flex-direction: row;
@@ -18,9 +18,9 @@
     .pfa-board {
       height: 113px;
       // width: 100%;
-      @include flex($direction: column, $gap: unset);
       padding: 0 0 var(--space-24) var(--space-24);
 
+      @include flex($direction: column, $gap: unset);
       justify-content: end;
 
       background: rgb(232, 77, 112);
@@ -35,6 +35,7 @@
       h2 {
         color: var(--white);
       }
+
       p {
         @extend .body-2;
         color: var(--white);
@@ -57,36 +58,38 @@
       background-color: var(--white);
       border-radius: var(--space-10);
 
-      .pfa-roadmap-header {
+      .pfa-header {
         @include flex($direction: row, $gap: unset);
         align-items: center;
-        .pfa-roadmap-header__h3 {
+
+        .pfa-header__h3 {
           color: var(--navy-blue-1);
         }
 
-        .pfa-roadmap-header__a {
+        .pfa-header__a {
           margin-left: auto;
           @extend .body-3;
           color: var(--blue);
         }
       }
 
-      .pfa-roadmap-rows {
+      .pfa-rows {
         @include flex($direction: column, $gap: var(--space-8));
 
-        .pfa-roadmap-row {
+        .pfa-row {
           @include flex($direction: row, $gap: var(--space-8));
           align-items: center;
 
-          .pfa-roadmap-row__p-text {
+          .pfa-row__p-text {
             @extend .body-1;
             color: var(--navy-blue-2);
           }
 
-          .pfa-roadmap-row__p-number {
-            @extend .pfa-roadmap-row__p-text;
-            font-weight: bold;
+          .pfa-row__p-number {
             margin-left: auto;
+
+            @extend .pfa-row__p-text;
+            font-weight: bold;
           }
         }
       }
@@ -97,34 +100,36 @@
     width: 825px;
     @include flex($direction: column, $gap: var(--space-24));
 
-    .pfa-main-header {
+    .pfa-header {
       padding: var(--space-14) var(--space-16) var(--space-14) var(--space-24);
       @include flex($direction: row, $gap: var(--space-38));
       align-items: center;
+
       background-color: var(--navy-blue);
       border-radius: var(--space-10);
 
-      .pfa-main-suggestions {
+      .pfa-suggestions {
         @include flex($direction: row, $gap: var(--space-16));
 
-        .pfa-main-suggestions__img {
+        .pfa-suggestions__img {
           height: var(--space-24);
         }
 
-        .pfa-main-suggestions__h3 {
+        .pfa-suggestions__h3 {
           color: var(--white);
         }
       }
 
-      .pfa-main-sort {
+      .pfa-sort {
         @include flex($direction: row, $gap: var(--space-6));
         align-items: center;
-        .pfa-main-sort__p {
+
+        .pfa-sort__p {
           @include text-preset(400, 14px);
           color: var(--white);
         }
 
-        .pfa-main-sort__button {
+        .pfa-sort__button {
           border: none;
           background-color: inherit;
 
@@ -135,12 +140,13 @@
         }
       }
 
-      .pfa-main__add-feedback-btn {
+      .pfa-header__btn {
         height: var(--space-44);
         padding: var(--space-24);
         margin-left: auto;
         display: flex;
         align-items: center;
+
         border: none;
         border-radius: var(--space-10);
         background-color: var(--violet);
@@ -149,62 +155,67 @@
       }
     }
 
-    .pfa-main--cards {
+    .pfa-cards {
       @include flex($direction: column, $gap: var(--space-20));
 
-      .pfa-main--card {
+      .pfa-card {
         padding: var(--space-28) var(--space-32);
         @include flex($direction: row, $gap: var(--space-40));
+
         background-color: var(--white);
         border-radius: var(--space-10);
 
-        .pfa-main--vote {
+        .pfa-vote {
           height: 29px;
           padding: var(--space-8);
           display: flex;
           flex-direction: column;
           gap: var(--space-6);
           align-items: center;
+
           background-color: var(--white-1);
           border-radius: var(--space-10);
 
           img,
-          .pfa-main--vote__p {
+          .pfa-vote__p {
             @extend .body-3;
             font-weight: bold;
             color: var(--navy-blue-1);
           }
         }
 
-        .pfa-main--texts {
+        .pfa-texts {
           @include flex($direction: column, $gap: var(--space-12));
-          .pfa-main--titles {
+
+          .pfa-titles {
             @include flex($direction: column, $gap: var(--space-4));
+
             h3 {
               color: var(--navy-blue-1);
             }
 
-            .pfa-main--titles__p {
+            .pfa-titles__p {
               @extend .body-1;
               color: var(--navy-blue-2);
             }
           }
 
-          .pfa-main--category__p {
+          .pfa-category__p {
             @extend .stickers;
           }
         }
 
-        .pfa-main--comments {
+        .pfa-comments {
           margin-left: auto;
           @include flex($direction: row, $gap: var(--space-8));
           align-items: center;
+
           img {
             width: 18px;
             height: 16px;
           }
 
-          .pfa-main--comments__p {
+          .pfa-comments__p {
             @extend .body-1;
             font-weight: bold;
             color: var(--navy-blue-1);

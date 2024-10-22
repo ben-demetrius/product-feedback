@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/app-two.scss";
+import "../styles/app.scss";
 
 const Board = () => {
   const title = "Frontend Mentor";
