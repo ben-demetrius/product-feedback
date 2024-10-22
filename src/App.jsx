@@ -4,7 +4,6 @@ import Board from "./assets/components/Board";
 import CategoryBoard from "./assets/components/CategoryBoard";
 import Roadmap from "./assets/components/Roadmap";
 import Header from "./assets/components/Header";
-import Card from "./assets/components/Card";
 import CreateFeedback from "./assets/components/CreateFeedback";
 import Cards from "./assets/components/Cards";
 
