@@ -8,9 +8,9 @@ const Sticker = ({ categoryName, categoryKey, filters, setFilters }) => {
   };
 
   const addCategory = (category) => {
-    // if (!filters.includes(category)) {
-    //   return categoryKey;
-    // }
+    if (!filters.includes(category)) {
+      return categoryKey;
+    }
     return categoryKey;
   };
 
