@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/app.scss";
 import { get } from "../../js/httpRequests";
 import Sticker from "./Sticker";
