@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import "../../styles/app.scss";
 import { get } from "../../js/httpRequests";
 import Sticker from "./Sticker";
@@ -8,14 +8,27 @@ const PicklistURL =
 
 const CategoryBoard = () => {
   const [picklist, setPicklist] = useState([]);
-
   useEffect(() => {
     get(PicklistURL).then((data) => setPicklist(data));
   }, []);
 
+  const [filters, setFilters] = useState([]);
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
+
   const list = picklist.map((item, i) => {
-    return <Sticker key={i} stickerText={item.name} />;
+    return (
+      <Sticker
+        key={i}
+        categoryName={item.name}
+        categoryKey={item.key}
+        filters={filters}
+        setFilters={setFilters}
+      />
+    );
   });
+
   return <div className="pfa-categories">{list}</div>;
 };
 
