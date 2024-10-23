@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import { get } from "../js/httpRequests";
+import { get } from "../../js/httpRequests";
 
 const Cards = () => {
   const [data, setData] = useState([]);

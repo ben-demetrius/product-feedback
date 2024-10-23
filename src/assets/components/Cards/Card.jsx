@@ -1,6 +1,6 @@
 import React from "react";
-import comments from "../../../public/assets/shared/icon-comments.svg";
-import up from "../../../public/assets/shared/icon-arrow-up.svg";
+import comments from "../../../../public/assets/shared/icon-comments.svg";
+import up from "../../../../public/assets/shared/icon-arrow-up.svg";
 
 const Card = ({ upvotes, title, description, category }) => {
   const replies = 2;

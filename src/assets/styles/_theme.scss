@@ -2,7 +2,15 @@
 * {
   margin: 0;
   padding: 0;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0 !important;
 }
 
 @media print {
@@ -10,6 +18,11 @@
     background-color: transparent;
   }
 }
+
+// @font-face {
+//   font-family: "Jost";
+//   src: url("Jost-Regular.woff") format("woff");
+// }
 
 :root {
   //Colors -------------------------
@@ -24,9 +37,6 @@
   --white-1: #f2f4fe;
   --white-2: #f7f8fd;
   --periwinkle: #cfd7ff;
-
-  //Fonts -------------------------
-  --font: "Jost", serif;
 
   //Spacing ------------------------------
   --space-4: 4px;
@@ -53,16 +63,12 @@
   --space-52: 52px;
   --space-90: 90px;
   --space-130: 129px;
+
+  //Fonts -------------------------
+  --font: "Jost", serif;
 }
 
-//Breakpoints ---------------------
-$xxl: 1440px;
-$xl: 1110px;
-$lg: 1024px;
-$md: 900px;
-$sm: 740px;
-$xs: 500px;
-
+//Fonts --------------------------
 @mixin text-preset(
   $weight,
   $size,
@@ -103,6 +109,14 @@ h4 {
 .body-3 {
   @include text-preset(600, 13px, 19px);
 }
+
+//Breakpoints ---------------------
+$xxl: 1440px;
+$xl: 1110px;
+$lg: 1024px;
+$md: 900px;
+$sm: 740px;
+$xs: 500px;
 
 //Layout
 @mixin flex($direction: row, $gap: var(--space-30)) {
