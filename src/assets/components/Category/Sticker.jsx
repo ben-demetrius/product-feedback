@@ -7,17 +7,10 @@ const Sticker = ({ categoryName, categoryKey, filters, setFilters }) => {
     return category !== categoryKey;
   };
 
-  const addCategory = (category) => {
-    if (!filters.includes(category)) {
-      return categoryKey;
-    }
-    return categoryKey;
-  };
-
   const handleSelect = () => {
     if (!select) {
       setSelect(true);
-      const addedFilter = filters.filter(addCategory);
+      const addedFilter = filters.concat(categoryKey);
       setFilters(addedFilter);
     } else {
       setSelect(false);
