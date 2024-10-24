@@ -17,6 +17,9 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
   const detailSubTitle =
     "Include any specific comments on what should be improved, added, etc.";
 
+  const postText = "Post";
+  const cancelText = "Cancel";
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("enhancement");
@@ -84,10 +87,10 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
               className="pfa-btn pfa-btn--secondary"
               onClick={handleClick}
             >
-              Cancel
+              {cancelText}
             </button>
             <button type="submit" className="pfa-btn pfa-btn--primary">
-              POST
+              {postText}
             </button>
           </div>
         </form>
