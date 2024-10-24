@@ -28,6 +28,8 @@ const CategoryBoard = ({ setFinalURL }) => {
         }
       }
       return setFinalURL(initialURL);
+    } else {
+      setFinalURL(null);
     }
   }
 
