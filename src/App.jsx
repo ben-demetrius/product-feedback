@@ -12,6 +12,8 @@ const App = () => {
 
   const [isActive, setIsActive] = useState(false);
 
+  const [cardsCount, setCardsCount] = useState(0);
+
   // useEffect(() => {
   //   console.log(finalURL);
   // }, [finalURL]);
@@ -29,11 +31,11 @@ const App = () => {
           </div>
           <div className="pfa-main">
             <Header
-              cardsCount={7}
+              cardsCount={cardsCount}
               isActive={isActive}
               setIsActive={setIsActive}
             />
-            <Cards finalURL={finalURL} />
+            <Cards finalURL={finalURL} setCardsCount={setCardsCount} />
           </div>
         </div>
       )}
