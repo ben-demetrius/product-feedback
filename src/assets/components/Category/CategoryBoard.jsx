@@ -18,16 +18,12 @@ const CategoryBoard = ({ setFinalURL }) => {
   }, [filters]);
 
   function constructURL({ setFinalURL }) {
-    const baseURL = "/o/c/feedbackses/?filter=category";
-    const categoryFromFilter = "";
+    const categoryFromFilter = "test";
     if (categoryFromFilter === "") {
       setFinalURL(null);
     } else {
-      const appendToURL = `%20eq%20%27${categoryFromFilter}%27%20`;
-      // const appendToURL = constructURLToAppend();
-      // const appendToURL = constructURLToAppend();
-      setFinalURL(baseURL + appendToURL);
-      constructURLToAppend();
+      const appendToURL = constructURLToAppend();
+      setFinalURL(appendToURL);
     }
   }
 
@@ -38,10 +34,8 @@ const CategoryBoard = ({ setFinalURL }) => {
         initialURL += `category%20eq%20%27${filters[i]}%27`;
         if (i != filters.length - 1) {
           initialURL += `%20or%20`;
-          // console.log("added the or part");
         }
       }
-      console.log(initialURL);
       return initialURL;
     }
   }

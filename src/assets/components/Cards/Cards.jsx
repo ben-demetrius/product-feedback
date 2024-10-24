@@ -9,9 +9,7 @@ const Cards = ({ finalURL }) => {
 
   useEffect(() => {
     if (finalURL == null) {
-      get(
-        "/o/c/feedbackses/?filter=category%20eq%20%27feature%27%20or%20category%20eq%20%27bug%27"
-      ).then((data) => setData(data));
+      get().then((data) => setData(data));
     } else {
       get(finalURL).then((data) => setData(data));
     }

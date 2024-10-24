@@ -9,9 +9,9 @@ import Cards from "./assets/components/Cards/Cards";
 
 const App = () => {
   const [finalURL, setFinalURL] = useState(null);
-  // useEffect(() => {
-  //   console.log(finalURL);
-  // }, [finalURL]);
+  useEffect(() => {
+    console.log(finalURL);
+  }, [finalURL]);
 
   return (
     <div className="pfa-app">
