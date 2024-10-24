@@ -19,7 +19,7 @@ const CategoryBoard = ({ setFinalURL }) => {
 
   function constructURL({ setFinalURL }) {
     const baseURL = "/o/c/feedbackses/?filter=category";
-    const categoryFromFilter = "bug";
+    const categoryFromFilter = "";
     if (categoryFromFilter === "") {
       setFinalURL(null);
     } else {
@@ -32,17 +32,18 @@ const CategoryBoard = ({ setFinalURL }) => {
   }
 
   function constructURLToAppend() {
-    let initialURL = "/o/c/feedbackses/?filter=category";
-    if (filters.length != 0)
+    if (filters.length != 0) {
+      let initialURL = "/o/c/feedbackses/?filter=";
       for (let i = 0; i < filters.length; i++) {
-        initialURL += `%20eq%20%27${filters[i]}%27`;
-        if (i != filters.length) {
-          initialURL += `%20or`;
+        initialURL += `category%20eq%20%27${filters[i]}%27`;
+        if (i != filters.length - 1) {
+          initialURL += `%20or%20`;
+          // console.log("added the or part");
         }
-        // `%20eq%20%27${filters[i]}%27`;
-        // `%20eq%20%27${filters[i]}%27 %20and %20category%20eq%20%27${filters[i]}%27`;
       }
-    console.log(initialURL);
+      console.log(initialURL);
+      return initialURL;
+    }
   }
 
   const list = picklist.map((item, i) => {
