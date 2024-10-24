@@ -15,7 +15,6 @@ const CategoryBoard = ({ setFinalURL }) => {
   const [filters, setFilters] = useState([]);
   useEffect(() => {
     constructURL({ setFinalURL });
-    console.log(filters);
   }, [filters]);
 
   function constructURL({ setFinalURL }) {
@@ -26,7 +25,17 @@ const CategoryBoard = ({ setFinalURL }) => {
     } else {
       const appendToURL = `%20eq%20%27${categoryFromFilter}%27%20`;
       setFinalURL(baseURL + appendToURL);
+      constructURLToAppend();
     }
+  }
+
+  function constructURLToAppend() {
+    let initialURL = "";
+    if (filters.length != 0)
+      for (let i = 0; i < filters.length; i++) {
+        initialURL += `%20eq%20%27${filters[i]}%27%20`;
+      }
+    console.log(initialURL);
   }
 
   const list = picklist.map((item, i) => {
