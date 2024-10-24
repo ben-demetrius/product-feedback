@@ -6,7 +6,7 @@ import Sticker from "./Sticker";
 const PicklistURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
 
-const CategoryBoard = () => {
+const CategoryBoard = ({ setFinalURL }) => {
   const [picklist, setPicklist] = useState([]);
   useEffect(() => {
     get(PicklistURL).then((data) => setPicklist(data));
@@ -14,8 +14,20 @@ const CategoryBoard = () => {
 
   const [filters, setFilters] = useState([]);
   useEffect(() => {
-    console.log(filters);
+    constructURL({ setFinalURL });
+    // console.log(filters);
   }, [filters]);
+
+  function constructURL({ setFinalURL }) {
+    const baseURL = "/o/c/feedbackses/?filter=category";
+    const categoryFromFilter = "bug";
+    if (categoryFromFilter === "") {
+      setFinalURL(null);
+    } else {
+      const appendToURL = `%20eq%20%27${categoryFromFilter}%27%20`;
+      setFinalURL(baseURL + appendToURL);
+    }
+  }
 
   const list = picklist.map((item, i) => {
     return (

@@ -4,12 +4,16 @@ import { get } from "../../js/httpRequests";
 
 const filteredURL = "/o/c/feedbackses/?filter=category%20eq%20%27feature%27";
 
-const Cards = () => {
+const Cards = ({ finalURL }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    get(filteredURL).then((data) => setData(data));
-  }, []);
+    if (finalURL == null) {
+      get().then((data) => setData(data));
+    } else {
+      get(finalURL).then((data) => setData(data));
+    }
+  }, [finalURL]);
 
   const cards = data.map((item, i) => {
     return (
