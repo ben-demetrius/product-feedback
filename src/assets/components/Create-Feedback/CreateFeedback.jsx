@@ -33,6 +33,10 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
     setIsActive(false);
   };
 
+  const handleClick = () => {
+    setIsActive(false);
+  };
+
   return (
     <div className="pfa-create-feedback">
       <BackButton isActive={isActive} setIsActive={setIsActive} />
@@ -75,7 +79,11 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
             />
           </div>
           <div className="pfa-feedback-buttons">
-            <button type="reset" className="pfa-btn pfa-btn--secondary">
+            <button
+              type="reset"
+              className="pfa-btn pfa-btn--secondary"
+              onClick={handleClick}
+            >
               Cancel
             </button>
             <button type="submit" className="pfa-btn pfa-btn--primary">
