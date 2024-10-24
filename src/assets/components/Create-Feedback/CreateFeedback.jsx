@@ -4,7 +4,7 @@ import newFeedback from "../../../../public/assets/shared/icon-new-feedback.svg"
 import Feedback from "../../js/FeedBack";
 import { post } from "../../js/httpRequests";
 
-const CreateFeedback = () => {
+const CreateFeedback = ({ isActive, setIsActive }) => {
   const sectionTitle = "Create New Feedback";
 
   const feedbackTitle = "Feedback Title";
@@ -30,11 +30,12 @@ const CreateFeedback = () => {
     });
 
     post(tempObj);
+    setIsActive(false);
   };
 
   return (
     <div className="pfa-create-feedback">
-      <BackButton />
+      <BackButton isActive={isActive} setIsActive={setIsActive} />
       <div className="pfa-main">
         <img src={newFeedback} className="pfa-main__img" />
         <form className="pfa-feedback-form" onSubmit={handleSubmit}>

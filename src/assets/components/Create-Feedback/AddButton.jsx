@@ -1,10 +1,21 @@
 import React from "react";
-import Button from "../micro-components/Button";
 
-const AddButton = () => {
+const AddButton = ({ isActive, setIsActive }) => {
   const addFeedbackText = "Add Feedback";
 
-  return <Button btnText={addFeedbackText} />;
+  const handleClick = () => {
+    if (isActive) {
+      setIsActive(false);
+    } else {
+      setIsActive(true);
+    }
+  };
+
+  return (
+    <button className="pfa-header__btn" onClick={handleClick}>
+      + {addFeedbackText}
+    </button>
+  );
 };
 
 export default AddButton;

@@ -10,26 +10,33 @@ import Header from "./assets/components/Create-Feedback/Header";
 const App = () => {
   const [finalURL, setFinalURL] = useState(null);
 
-  const [addFeedback, setAddFeedBack] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    console.log(finalURL);
-  }, [finalURL]);
+  // useEffect(() => {
+  //   console.log(finalURL);
+  // }, [finalURL]);
 
   return (
     <div className="pfa-app">
-      <div className="pfa-dash">
-        <div className="pfa-side-cards">
-          <Board />
-          <CategoryBoard setFinalURL={setFinalURL} />
-          <Roadmap />
+      {isActive ? (
+        <CreateFeedback isActive={isActive} setIsActive={setIsActive} />
+      ) : (
+        <div className="pfa-dash">
+          <div className="pfa-side-cards">
+            <Board />
+            <CategoryBoard setFinalURL={setFinalURL} />
+            <Roadmap />
+          </div>
+          <div className="pfa-main">
+            <Header
+              cardsCount={7}
+              isActive={isActive}
+              setIsActive={setIsActive}
+            />
+            <Cards finalURL={finalURL} />
+          </div>
         </div>
-        <div className="pfa-main">
-          <Header cardsCount={7} />
-          <Cards finalURL={finalURL} />
-        </div>
-      </div>
-      <CreateFeedback />
+      )}
     </div>
   );
 };

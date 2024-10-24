@@ -3,7 +3,7 @@ import imgSrc from "../../../../public/assets/suggestions/icon-suggestions.svg";
 import ArrowDown from "../micro-components/ArrowDown";
 import AddButton from "./AddButton";
 
-const Header = ({ cardsCount }) => {
+const Header = ({ cardsCount, isActive, setIsActive }) => {
   const suggestionsText = `${cardsCount} Suggestions`;
   const sortByText = "Sort By";
   const mostUpvotesText = "Most Upvotes";
@@ -21,7 +21,7 @@ const Header = ({ cardsCount }) => {
           <ArrowDown />
         </button>
       </div>
-      <AddButton />
+      <AddButton isActive={isActive} setIsActive={setIsActive} />
     </div>
   );
 };
