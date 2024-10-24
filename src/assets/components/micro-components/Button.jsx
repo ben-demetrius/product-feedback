@@ -1,8 +1,7 @@
 import React from "react";
-import "../../styles/index.scss";
 
-const Button = () => {
-  return <div className="btn"></div>;
+const Button = ({ btnText }) => {
+  return <button className="pfa-header__btn">+ {btnText}</button>;
 };
 
 export default Button;

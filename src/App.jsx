@@ -3,12 +3,15 @@ import "./assets/styles/app.scss";
 import Board from "./assets/components/Board";
 import CategoryBoard from "./assets/components/Category/CategoryBoard";
 import Roadmap from "./assets/components/Roadmap";
-import Header from "./assets/components/Header";
-import CreateFeedback from "./assets/components/CreateFeedback";
+import CreateFeedback from "./assets/components/Create-Feedback/CreateFeedback";
 import Cards from "./assets/components/Cards/Cards";
+import Header from "./assets/components/Create-Feedback/Header";
 
 const App = () => {
   const [finalURL, setFinalURL] = useState(null);
+
+  const [addFeedback, setAddFeedBack] = useState(false);
+
   useEffect(() => {
     console.log(finalURL);
   }, [finalURL]);
@@ -22,7 +25,7 @@ const App = () => {
           <Roadmap />
         </div>
         <div className="pfa-main">
-          <Header />
+          <Header cardsCount={7} />
           <Cards finalURL={finalURL} />
         </div>
       </div>

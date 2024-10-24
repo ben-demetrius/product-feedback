@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import BackButton from "./micro-components/BackButton";
-import newFeedback from "../../../public/assets/shared/icon-new-feedback.svg";
-import Feedback from "../js/FeedBack";
-import { post } from "../js/httpRequests";
+import BackButton from "../micro-components/BackButton";
+import newFeedback from "../../../../public/assets/shared/icon-new-feedback.svg";
+import Feedback from "../../js/FeedBack";
+import { post } from "../../js/httpRequests";
 
 const CreateFeedback = () => {
   const sectionTitle = "Create New Feedback";

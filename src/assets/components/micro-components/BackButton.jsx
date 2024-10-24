@@ -4,7 +4,7 @@ import right from "../../../../public/assets/shared/icon-arrow-left.svg";
 
 const BackButton = () => {
   return (
-    <button className="pfa__back-btn pfa__back-btn:hover">
+    <button className="pfa__back-btn">
       <img src={right} />
       <h4>Go Back</h4>
     </button>

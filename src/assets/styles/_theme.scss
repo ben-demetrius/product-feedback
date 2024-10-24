@@ -41,6 +41,8 @@ button {
   --white-1: #f2f4fe;
   --white-2: #f7f8fd;
   --periwinkle: #cfd7ff;
+  --hover-violet: #c75af6;
+  --hover-navy-blue: #656ea3;
 
   //Spacing ------------------------------
   --space-4: 4px;
@@ -195,12 +197,21 @@ $xs: 500px;
   @extend .h4;
   color: var(--white);
 }
+
 .pfa-btn--primary {
   background-color: var(--violet);
 }
 
+.pfa-btn--primary:hover {
+  background-color: var(--hover-violet);
+}
+
 .pfa-btn--secondary {
   background-color: var(--navy-blue-1);
+}
+
+.pfa-btn--secondary:hover {
+  background-color: var(--hover-navy-blue);
 }
 
 //Interactive Elements -----------------------------

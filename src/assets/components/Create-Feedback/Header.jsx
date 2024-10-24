@@ -1,11 +1,12 @@
 import React from "react";
-import imgSrc from "../../../public/assets/suggestions/icon-suggestions.svg";
-import down from "../../../public/assets/shared/icon-arrow-down.svg";
-import ArrowDown from "./micro-components/ArrowDown";
+import imgSrc from "../../../../public/assets/suggestions/icon-suggestions.svg";
+import ArrowDown from "../micro-components/ArrowDown";
+import AddButton from "./AddButton";
 
-const Header = () => {
-  const suggestionsText = "6 Suggestions";
-  const addFeedback = "Add Feedback";
+const Header = ({ cardsCount }) => {
+  const suggestionsText = `${cardsCount} Suggestions`;
+  const sortByText = "Sort By";
+  const mostUpvotesText = "Most Upvotes";
   return (
     <div className="pfa-header">
       <div className="pfa-suggestions">
@@ -14,14 +15,13 @@ const Header = () => {
       </div>
       <div className="pfa-sort">
         <p className="pfa-sort__p">
-          Sort by : <b>Most Upvotes</b>
+          {sortByText} : <b>{mostUpvotesText}</b>
         </p>
         <button className="pfa-sort__button">
-          {/* <img src={down} /> */}
           <ArrowDown />
         </button>
       </div>
-      <button className="pfa-header__btn">+ {addFeedback}</button>
+      <AddButton />
     </div>
   );
 };
