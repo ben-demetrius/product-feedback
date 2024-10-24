@@ -3,7 +3,6 @@ const baseURL = `http://localhost:8080`;
 
 const makeHttpRequest = async ({ url = defaultURL, method, body = null }) => {
   const setUrl = baseURL + url;
-  console.log(setUrl);
   const headers = {
     "Content-Type": "application/json; charset=utf8",
     "Access-Control-Allow-Origin": "*",

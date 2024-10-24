@@ -15,7 +15,7 @@ const CategoryBoard = ({ setFinalURL }) => {
   const [filters, setFilters] = useState([]);
   useEffect(() => {
     constructURL({ setFinalURL });
-    // console.log(filters);
+    console.log(filters);
   }, [filters]);
 
   function constructURL({ setFinalURL }) {
