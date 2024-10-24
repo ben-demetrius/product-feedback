@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { get } from "../../js/httpRequests";
 
-const Cards = ({ finalURL, setCardsCount }) => {
+const Cards = ({ finalURL }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -11,10 +11,6 @@ const Cards = ({ finalURL, setCardsCount }) => {
     }
     get(finalURL).then((data) => setData(data));
   }, [finalURL]);
-
-  useEffect(() => {
-    setCardsCount(data.length);
-  }, [data]);
 
   const cards = data.map((item, i) => {
     return (
