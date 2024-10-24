@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { get } from "../../js/httpRequests";
 
-const filteredURL = "/o/c/feedbackses/?filter=category%20eq%20%27feature%27";
-
 const Cards = ({ finalURL }) => {
   const [data, setData] = useState([]);
 

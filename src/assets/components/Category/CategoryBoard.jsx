@@ -5,6 +5,7 @@ import Sticker from "./Sticker";
 
 const PicklistURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
+const objectToFilter = "/o/c/feedbackses/";
 
 const CategoryBoard = ({ setFinalURL }) => {
   const [picklist, setPicklist] = useState([]);
@@ -18,20 +19,15 @@ const CategoryBoard = ({ setFinalURL }) => {
   }, [filters]);
 
   function constructURL({ setFinalURL }) {
-    const appendToURL = constructURLToAppend();
-    setFinalURL(appendToURL);
-  }
-
-  function constructURLToAppend() {
     if (filters.length != 0) {
-      let initialURL = "/o/c/feedbackses/?filter=";
+      let initialURL = objectToFilter + "?filter=";
       for (let i = 0; i < filters.length; i++) {
         initialURL += `category%20eq%20%27${filters[i]}%27`;
         if (i != filters.length - 1) {
           initialURL += `%20or%20`;
         }
       }
-      return initialURL;
+      return setFinalURL(initialURL);
     }
   }
 
