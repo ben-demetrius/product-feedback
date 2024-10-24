@@ -18,13 +18,8 @@ const CategoryBoard = ({ setFinalURL }) => {
   }, [filters]);
 
   function constructURL({ setFinalURL }) {
-    const categoryFromFilter = "test";
-    if (categoryFromFilter === "") {
-      setFinalURL(null);
-    } else {
-      const appendToURL = constructURLToAppend();
-      setFinalURL(appendToURL);
-    }
+    const appendToURL = constructURLToAppend();
+    setFinalURL(appendToURL);
   }
 
   function constructURLToAppend() {
