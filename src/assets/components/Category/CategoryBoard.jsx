@@ -24,16 +24,23 @@ const CategoryBoard = ({ setFinalURL }) => {
       setFinalURL(null);
     } else {
       const appendToURL = `%20eq%20%27${categoryFromFilter}%27%20`;
+      // const appendToURL = constructURLToAppend();
+      // const appendToURL = constructURLToAppend();
       setFinalURL(baseURL + appendToURL);
       constructURLToAppend();
     }
   }
 
   function constructURLToAppend() {
-    let initialURL = "";
+    let initialURL = "/o/c/feedbackses/?filter=category";
     if (filters.length != 0)
       for (let i = 0; i < filters.length; i++) {
-        initialURL += `%20eq%20%27${filters[i]}%27%20`;
+        initialURL += `%20eq%20%27${filters[i]}%27`;
+        if (i != filters.length) {
+          initialURL += `%20or`;
+        }
+        // `%20eq%20%27${filters[i]}%27`;
+        // `%20eq%20%27${filters[i]}%27 %20and %20category%20eq%20%27${filters[i]}%27`;
       }
     console.log(initialURL);
   }
