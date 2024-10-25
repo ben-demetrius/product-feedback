@@ -5,9 +5,8 @@ import Sticker from "./Sticker";
 
 const PicklistURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
-const objectToFilter = "/o/c/feedbackses/";
 
-const CategoryBoard = ({ setFinalURL }) => {
+const CategoryBoard = ({ setFinalURL, objectToFilter }) => {
   const [picklist, setPicklist] = useState([]);
   useEffect(() => {
     get(PicklistURL).then((data) => setPicklist(data));
@@ -29,7 +28,7 @@ const CategoryBoard = ({ setFinalURL }) => {
       }
       return setFinalURL(initialURL);
     } else {
-      setFinalURL(null);
+      setFinalURL(objectToFilter);
     }
   }
 

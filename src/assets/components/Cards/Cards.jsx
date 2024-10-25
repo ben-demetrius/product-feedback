@@ -6,11 +6,7 @@ const Cards = ({ finalURL, setCardsCount }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (finalURL == null) {
-      get().then((data) => setData(data));
-    } else {
-      get(finalURL).then((data) => setData(data));
-    }
+    get(finalURL).then((data) => setData(data));
   }, [finalURL]);
 
   useEffect(() => {

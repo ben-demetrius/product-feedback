@@ -7,11 +7,11 @@ import CreateFeedback from "./assets/components/Create-Feedback/CreateFeedback";
 import Cards from "./assets/components/Cards/Cards";
 import Header from "./assets/components/Create-Feedback/Header";
 
+const objectToFilter = "/o/c/feedbackses/";
+
 const App = () => {
-  const [finalURL, setFinalURL] = useState(null);
-
+  const [finalURL, setFinalURL] = useState(objectToFilter);
   const [isActive, setIsActive] = useState(false);
-
   const [cardsCount, setCardsCount] = useState(0);
 
   // useEffect(() => {
@@ -26,7 +26,10 @@ const App = () => {
         <div className="pfa-dash">
           <div className="pfa-side-cards">
             <Board />
-            <CategoryBoard setFinalURL={setFinalURL} />
+            <CategoryBoard
+              setFinalURL={setFinalURL}
+              objectToFilter={objectToFilter}
+            />
             <Roadmap />
           </div>
           <div className="pfa-main">
