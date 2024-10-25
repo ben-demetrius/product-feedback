@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { get } from "../../js/httpRequests";
+import Empty from "../Empty";
 
-const Cards = ({ finalURL, setCardsCount }) => {
+const Cards = ({ finalURL, setCardsCount, isActive, setIsActive }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,6 +25,11 @@ const Cards = ({ finalURL, setCardsCount }) => {
       />
     );
   });
+
+  if (data.length == 0) {
+    return <Empty isActive={isActive} setIsActive={setIsActive} />;
+  }
+
   return <div className="pfa-cards">{cards}</div>;
 };
 

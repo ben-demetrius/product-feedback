@@ -9,6 +9,7 @@ const BackButton = ({ isActive, setIsActive }) => {
     } else {
       setIsActive(true);
     }
+    location.reload();
   };
 
   return (

@@ -215,6 +215,49 @@
           }
         }
       }
+
+      .pfa-empty {
+        width: 100%;
+        height: 600px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+        border-radius: 10px;
+
+        .pfa-empty__content {
+          width: 410px;
+          @include flex($direction: column, $gap: var(--space-52));
+          align-items: center;
+          .pfa-empty__img {
+            height: 130px;
+            width: 137px;
+          }
+          .pfa-empty__texts-button {
+            @include flex($direction: column, $gap: var(--space-48));
+            align-items: center;
+            .pfa-empty__texts {
+              @include flex($direction: column, $gap: var(--space-16));
+              align-items: center;
+              .pfa-empty__h1 {
+                color: var(--navy-blue-1);
+              }
+
+              .pfa-empty__p {
+                @extend .body-1;
+                color: var(--navy-blue-2);
+                text-align: center;
+              }
+            }
+            .pfa-header__btn {
+              @extend .pfa-btn, .pfa-btn--primary;
+              margin-left: 0;
+            }
+          }
+        }
+      }
     }
   }
 

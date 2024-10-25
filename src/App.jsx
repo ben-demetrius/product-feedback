@@ -38,7 +38,12 @@ const App = () => {
               isActive={isActive}
               setIsActive={setIsActive}
             />
-            <Cards finalURL={finalURL} setCardsCount={setCardsCount} />
+            <Cards
+              finalURL={finalURL}
+              setCardsCount={setCardsCount}
+              isActive={isActive}
+              setIsActive={setIsActive}
+            />
           </div>
         </div>
       )}

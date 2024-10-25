@@ -34,10 +34,12 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
 
     post(tempObj);
     setIsActive(false);
+    location.reload();
   };
 
   const handleClick = () => {
     setIsActive(false);
+    location.reload();
   };
 
   return (
