@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ArrowDown from "../micro-components/ArrowDown";
 import { get } from "../../js/httpRequests";
 
-const sortURL =
+const sortPickListURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/sort/list-type-entries";
 
 const SortDropDown = ({ finalURL, setFinalURL }) => {
@@ -12,32 +12,28 @@ const SortDropDown = ({ finalURL, setFinalURL }) => {
   const [sortBy, setSortBy] = useState("mostUpvotes");
 
   useEffect(() => {
-    get(sortURL).then((data) => setSort(data));
+    get(sortPickListURL).then((data) => setSort(data));
   }, []);
 
   useEffect(() => {
     console.log(sortBy);
-    const initialURL = finalURL;
-    constructSortURL({ finalURL, setFinalURL, initialURL });
+    constructSortURL({ finalURL, setFinalURL });
   }, [sortBy]);
 
-  function constructSortURL({ finalURL, setFinalURL, initialURL }) {
+  function constructSortURL() {
+    let sortDescURL = `?sort=upvotes%3Adesc`;
+    let sortAscURL = `?sort=upvotes%3Aasc`;
+
     if (sortBy == "mostUpvotes") {
-      let order = "desc";
-      let sortURL = `?sort=upvotes%3A${order}`;
-      console.log("Descending order entered");
-      setFinalURL(initialURL);
-      console.log(finalURL);
-      //   setFinalURL(finalURL + sortURL);
-      //   console.log(finalURL);
+      if (finalURL.includes(sortAscURL)) {
+        return (sortDescURL = final - sortAscURL);
+      }
+      setFinalURL(finalURL + sortDescURL);
     } else {
-      let order = "asc";
-      let sortURL = `?sort=upvotes%3A${order}`;
-      console.log("Ascending order entered");
-      setFinalURL(initialURL);
-      console.log(finalURL);
-      setFinalURL(finalURL + sortURL);
-      console.log(finalURL);
+      if (finalURL.includes(sortDescURL)) {
+        return (sortAscURL = finalURL - sortDescURL);
+      }
+      setFinalURL(finalURL + sortAscURL);
     }
   }
 
