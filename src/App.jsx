@@ -14,9 +14,9 @@ const App = () => {
   const [isActive, setIsActive] = useState(false);
   const [cardsCount, setCardsCount] = useState(0);
 
-  // useEffect(() => {
-  //   console.log(finalURL);
-  // }, [finalURL]);
+  useEffect(() => {
+    console.log(finalURL);
+  }, [finalURL]);
 
   return (
     <div className="pfa-app">

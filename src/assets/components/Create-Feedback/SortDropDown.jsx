@@ -9,7 +9,7 @@ const SortDropDown = ({ finalURL, setFinalURL }) => {
   const sortByText = "Sort By";
 
   const [sort, setSort] = useState([]);
-  const [sortBy, setSortBy] = useState("");
+  const [sortBy, setSortBy] = useState("mostUpvotes");
 
   useEffect(() => {
     get(sortURL).then((data) => setSort(data));
@@ -17,23 +17,27 @@ const SortDropDown = ({ finalURL, setFinalURL }) => {
 
   useEffect(() => {
     console.log(sortBy);
-    constructSortURL({ finalURL, setFinalURL });
-    console.log(finalURL);
+    const initialURL = finalURL;
+    constructSortURL({ finalURL, setFinalURL, initialURL });
   }, [sortBy]);
 
-  function constructSortURL({ finalURL, setFinalURL }) {
-    if (sortBy != "") {
-      console.log("Construct Sort Block Entered");
-      let order = "asc";
-
-      if (sortBy == "mostUpvote") {
-        let order = "desc";
-        return order;
-      }
+  function constructSortURL({ finalURL, setFinalURL, initialURL }) {
+    if (sortBy == "mostUpvotes") {
+      let order = "desc";
       let sortURL = `?sort=upvotes%3A${order}`;
-      setFinalURL(finalURL + sortURL);
+      console.log("Descending order entered");
+      setFinalURL(initialURL);
+      console.log(finalURL);
+      //   setFinalURL(finalURL + sortURL);
+      //   console.log(finalURL);
     } else {
-      setFinalURL(finalURL);
+      let order = "asc";
+      let sortURL = `?sort=upvotes%3A${order}`;
+      console.log("Ascending order entered");
+      setFinalURL(initialURL);
+      console.log(finalURL);
+      setFinalURL(finalURL + sortURL);
+      console.log(finalURL);
     }
   }
 
