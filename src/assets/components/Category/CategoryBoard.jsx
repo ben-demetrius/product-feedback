@@ -8,11 +8,12 @@ const PicklistURL =
 
 const CategoryBoard = ({ setFinalURL, objectToFilter }) => {
   const [picklist, setPicklist] = useState([]);
+  const [filters, setFilters] = useState([]);
+
   useEffect(() => {
     get(PicklistURL).then((data) => setPicklist(data));
   }, []);
 
-  const [filters, setFilters] = useState([]);
   useEffect(() => {
     constructURL({ setFinalURL });
   }, [filters]);
