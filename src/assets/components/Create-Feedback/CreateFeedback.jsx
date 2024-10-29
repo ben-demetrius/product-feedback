@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BackButton from "../micro-components/BackButton";
 import newFeedback from "../../../../public/assets/shared/icon-new-feedback.svg";
 import Feedback from "../../js/FeedBack";
-import { post } from "../../js/httpRequests";
+import { post, get } from "../../js/httpRequests";
+
+const PicklistURL =
+  "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
 
 const CreateFeedback = ({ isActive, setIsActive }) => {
   const sectionTitle = "Create New Feedback";
@@ -22,7 +25,20 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("enhancement");
+  const [category, setCategory] = useState("ui");
+
+  const [picklist, setPicklist] = useState([]);
+  useEffect(() => {
+    get(PicklistURL).then((data) => setPicklist(data));
+  }, []);
+
+  const categoryPicklist = picklist.map((item, i) => {
+    return (
+      <option key={i} value={item.key}>
+        {item.name}
+      </option>
+    );
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,12 +81,15 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
           <div className="pfa-feedback-category">
             <h4 className="pfa-feedback-title__h4">{categoryTitle}</h4>
             <h4 className="pfa-feedback-title__p">{categorySubTitle}</h4>
-            <input
-              type="text"
-              id="name"
+
+            <select
+              name="categoryPicklist"
+              id="categoryPicklist"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-            />
+            >
+              {categoryPicklist}
+            </select>
           </div>
 
           <div className="pfa-feedback-detail">
