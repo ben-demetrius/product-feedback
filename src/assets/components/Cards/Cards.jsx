@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { get } from "../../js/httpRequests";
 import Empty from "../Empty";
+import useSWR from "swr";
+import { Error, Loading } from "../micro-components/Texts";
 
 const Cards = ({ finalURL, setCardsCount, isActive, setIsActive }) => {
-  const [data, setData] = useState([]);
+  const { data, error, isLoading } = useSWR(finalURL, get);
 
   useEffect(() => {
-    get(finalURL).then((data) => setData(data));
-  }, [finalURL]);
-
-  useEffect(() => {
-    setCardsCount(data.length);
+    setCardsCount(data ? data?.length : "loading");
   }, [data]);
 
-  const cards = data.map((item, i) => {
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
+
+  const cards = data?.map((item, i) => {
     return (
       <Card
         key={i}
@@ -26,7 +27,7 @@ const Cards = ({ finalURL, setCardsCount, isActive, setIsActive }) => {
     );
   });
 
-  if (data.length == 0) {
+  if (data?.length == 0) {
     return <Empty isActive={isActive} setIsActive={setIsActive} />;
   }
 

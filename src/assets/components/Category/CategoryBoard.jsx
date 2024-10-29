@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 import "../../styles/app.scss";
 import { get } from "../../js/httpRequests";
 import Sticker from "./Sticker";
+import useSWR from "swr";
+import { Error, Loading } from "../micro-components/Texts";
 
 const PicklistURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
 
 const CategoryBoard = ({ setFinalURL, objectToFilter }) => {
-  const [picklist, setPicklist] = useState([]);
   const [filters, setFilters] = useState([]);
 
-  useEffect(() => {
-    get(PicklistURL).then((data) => setPicklist(data));
-  }, []);
+  const { data, error, isLoading } = useSWR(PicklistURL, get);
 
   useEffect(() => {
     constructURL({ setFinalURL });
   }, [filters]);
+
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
   function constructURL({ setFinalURL }) {
     if (filters.length != 0) {
@@ -33,7 +35,7 @@ const CategoryBoard = ({ setFinalURL, objectToFilter }) => {
     }
   }
 
-  const list = picklist.map((item, i) => {
+  const list = data?.map((item, i) => {
     return (
       <Sticker
         key={i}

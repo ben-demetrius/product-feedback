@@ -153,6 +153,11 @@ $xs: 500px;
   background-color: var(--white-2);
 }
 
+p {
+  @extend .body-3;
+  color: var(--blue);
+}
+
 .pfa-arrow-down {
   svg {
     path {

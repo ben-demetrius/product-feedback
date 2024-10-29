@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ArrowDown from "../micro-components/ArrowDown";
 import { get } from "../../js/httpRequests";
+import useSWR from "swr";
+import { Error, Loading } from "../micro-components/Texts";
 
 const sortPickListURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/sort/list-type-entries";
@@ -8,17 +9,17 @@ const sortPickListURL =
 const SortDropDown = ({ finalURL, setFinalURL }) => {
   const sortByText = "Sort By";
 
-  const [sort, setSort] = useState([]);
   const [sortBy, setSortBy] = useState("mostUpvotes");
 
-  useEffect(() => {
-    get(sortPickListURL).then((data) => setSort(data));
-  }, []);
+  const { data, error, isLoading } = useSWR(sortPickListURL, get);
 
   useEffect(() => {
     console.log(sortBy);
     constructSortURL({ finalURL, setFinalURL });
   }, [sortBy]);
+
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
   function constructSortURL() {
     let sortDescURL = `?sort=upvotes%3Adesc`;
@@ -37,7 +38,7 @@ const SortDropDown = ({ finalURL, setFinalURL }) => {
     }
   }
 
-  const sortList = sort.map((item, i) => {
+  const sortList = data?.map((item, i) => {
     return (
       <option key={i} value={item.key}>
         {item.name}
@@ -48,16 +49,21 @@ const SortDropDown = ({ finalURL, setFinalURL }) => {
   return (
     <div className="pfa-sort">
       <p className="pfa-sort__p">{sortByText} :</p>
-      <form>
-        <select
-          name="sort"
-          id="sort"
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-        >
-          {sortList}
-        </select>
-      </form>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <form>
+          <select
+            name="sort"
+            id="sort"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            {sortList}
+          </select>
+        </form>
+      )}
+
       <button className="pfa-sort__button">{/* <ArrowDown /> */}</button>
     </div>
   );

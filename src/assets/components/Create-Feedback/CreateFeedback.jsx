@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BackButton from "../micro-components/BackButton";
 import newFeedback from "../../../../public/assets/shared/icon-new-feedback.svg";
 import Feedback from "../../js/FeedBack";
 import { post, get } from "../../js/httpRequests";
+import useSWR from "swr";
+import { Error, Loading } from "../micro-components/Texts";
 
 const PicklistURL =
   "/o/headless-admin-list-type/v1.0/list-type-definitions/by-external-reference-code/categories/list-type-entries";
@@ -27,12 +29,11 @@ const CreateFeedback = ({ isActive, setIsActive }) => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("ui");
 
-  const [picklist, setPicklist] = useState([]);
-  useEffect(() => {
-    get(PicklistURL).then((data) => setPicklist(data));
-  }, []);
+  const { data, error, isLoading } = useSWR(PicklistURL, get);
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
-  const categoryPicklist = picklist.map((item, i) => {
+  const categoryPicklist = data?.map((item, i) => {
     return (
       <option key={i} value={item.key}>
         {item.name}
