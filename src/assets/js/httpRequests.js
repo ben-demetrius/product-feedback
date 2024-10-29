@@ -6,7 +6,7 @@ const makeHttpRequest = async ({
   const headers = {
     "Content-Type": "application/json; charset=utf8",
     "Access-Control-Allow-Origin": "*",
-    Authorization: "Basic " + btoa("test@liferay.com:learn"),
+    "x-csrf-token": Liferay.authToken,
   };
   return await fetch(url, { headers, method, body });
 };
